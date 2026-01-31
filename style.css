@@ -23,7 +23,7 @@ body {
 }
 
 /* Welcome Popup */
-.welcome-popup {
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,7 +39,7 @@ body {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.welcome-popup.hidden {
+.popup.hidden {
     opacity: 0;
     visibility: hidden;
 }
