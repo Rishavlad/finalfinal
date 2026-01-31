@@ -5,7 +5,7 @@ const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Welcome popup functionality
-const welcomePopup = document.getElementById('welcome-popup');
+const popup = document.getElementById('popup');
 const popupClose = document.getElementById('popup-close');
 const enterSiteBtn = document.getElementById('enter-site');
 
@@ -14,7 +14,7 @@ document.body.classList.add('popup-open');
 
 // Function to close popup
 function closePopup() {
-    welcomePopup.classList.add('hidden');
+    popup.classList.add('hidden');
     document.body.classList.remove('popup-open');
 }
 
@@ -23,15 +23,15 @@ popupClose.addEventListener('click', closePopup);
 enterSiteBtn.addEventListener('click', closePopup);
 
 // Close popup when clicking outside content
-welcomePopup.addEventListener('click', (e) => {
-    if (e.target === welcomePopup) {
+popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
         closePopup();
     }
 });
 
 // Close popup with Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !welcomePopup.classList.contains('hidden')) {
+    if (e.key === 'Escape' && !popup.classList.contains('hidden')) {
         closePopup();
     }
 });
