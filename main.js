@@ -4,6 +4,38 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Welcome popup functionality
+const welcomePopup = document.getElementById('welcome-popup');
+const popupClose = document.getElementById('popup-close');
+const enterSiteBtn = document.getElementById('enter-site');
+
+// Add popup-open class to body initially
+document.body.classList.add('popup-open');
+
+// Function to close popup
+function closePopup() {
+    welcomePopup.classList.add('hidden');
+    document.body.classList.remove('popup-open');
+}
+
+// Close popup events
+popupClose.addEventListener('click', closePopup);
+enterSiteBtn.addEventListener('click', closePopup);
+
+// Close popup when clicking outside content
+welcomePopup.addEventListener('click', (e) => {
+    if (e.target === welcomePopup) {
+        closePopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !welcomePopup.classList.contains('hidden')) {
+        closePopup();
+    }
+});
+
 // Handle navbar scroll effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
